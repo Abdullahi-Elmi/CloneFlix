@@ -1,33 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a full-stack web application project, I originally developed in Feb.2023. A classic full-stack project for developers to showcase their abilities: re-creating a well known full-stack application. 
 
-## Getting Started
+I recently decided to create an updated version as there was a significant Next.js version release in May 2023 that changed things significantly and I wanted to practice my understanding of these changes by successfully migrating an older project to the current Next.js version. 
 
-First, run the development server:
+The tech stack for this project consists of includes:
+- **React / Next.js:** For the front-end
+- **Tailwind:** For the CSS/UI
+- **Node.js:** For the backend
+- **MongoDB:** For the database
+- **Prisma:** ORM for the database
+- **NextAuth:** Authentication library to sync with any OAuth service
+- Vercel: Deployment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can visit the application at: 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Functionality
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Sign Up / Sign In / Watch Videos / Favorite videos for later
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
