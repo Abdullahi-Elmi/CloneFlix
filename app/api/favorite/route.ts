@@ -69,16 +69,11 @@ export async function DELETE(req: NextRequest) {
     }   
 }
 
-// HANDLE 405 ERRORS IF NOT `POST` OR `DELETE`
-// Handle unsupported methods
-export async function middleware(req: NextRequest) {
-    const method = req.method?.toUpperCase();
-
-    if (method !== 'POST' && method !== 'DELETE') {
-        return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
-    }
-}
-
+// Add the new config export according to Next.js conventions
 export const config = {
-    matcher: '/api/favorite', // Apply middleware to this route
+    runtime: 'edge', // Use 'edge' runtime for better performance
 };
+
+// export const config = {
+//     matcher: '/api/favorite', // Apply middleware to this route
+// };
