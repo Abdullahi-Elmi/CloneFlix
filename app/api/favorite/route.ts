@@ -70,4 +70,4 @@ export async function DELETE(req: NextRequest) {
 }
 
 // Add the new config export according to Next.js conventions
-export const runtime = 'edge';
+export const runtime = 'nodejs';
