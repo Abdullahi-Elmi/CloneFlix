@@ -1,7 +1,10 @@
 import React from 'react';
-import { BsFillPlayFill } from 'react-icons/bs';
-import FavoriteButton from './FavoriteButton';
 import { useRouter } from "next/navigation";
+import { BsFillPlayFill } from 'react-icons/bs';
+import { BiChevronDown } from 'react-icons/bi';
+
+import FavoriteButton from './FavoriteButton';
+import useInfoModal from '@/hooks/useInfoModal';
 
 interface MovieCardProps {
     data: Record<string, any>;
@@ -9,6 +12,7 @@ interface MovieCardProps {
 
 const MovieCard:React.FC<MovieCardProps> = ({ data }) => {
     const router = useRouter();
+    const { openModal } = useInfoModal();
     
     return (
         <div className='group relative col-span bg-zinc-900 h-[12vw]'>
@@ -23,10 +27,16 @@ const MovieCard:React.FC<MovieCardProps> = ({ data }) => {
                 <div className='w-full absolute transition bg-zinc-800 z-10 p-2 lg:p-4 shadow-md rounded-b-md'>
 
                     <div className='flex flex-row items-center gap-3'>
+                        
                         <div onClick={() => router.push(`/watch/${data?.id}`)} className='flex justify-center items-center transition cursor-pointer bg-white w-6 lg:w-10 h-6 lg:h-10 rounded-full hover:bg-neutral-300'>
                             <BsFillPlayFill size={30}/>
                         </div>
+                        
                         <FavoriteButton movieId={data.id} />
+
+                        <div onClick={() => openModal(data?.id)} className='flex justify-center items-center cursor-pointer group/item transition rounded-full ml-auto w-6 h-6 lg:w-10 lg:h-10 border-white border-2 hover:border-neutral-300'>
+                            <BiChevronDown size={30} className='text-white group-hover/item:text-neutral-300'/>
+                        </div>
                     </div>
 
                     <p className='text-green-400 font-semibold mt-4'>

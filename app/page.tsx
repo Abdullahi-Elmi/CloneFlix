@@ -26,6 +26,7 @@ import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieListClient from "@/components/MovieListClient";
 import FavoriteMoviesClient from "@/components/FavoriteMoviesClient";
+import InfoModalClient from "@/components/InfoModalClient";
 
 // import MovieList from "@/components/MovieList";
 // import useMovieList from "@/hooks/useMovieList";
@@ -41,6 +42,7 @@ export default async function Home() {
 
   return (
     <>
+      <InfoModalClient />
       <Navbar />
       <Billboard />
       <div className="pb-40">
