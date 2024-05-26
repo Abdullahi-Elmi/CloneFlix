@@ -25,6 +25,7 @@ import { redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieListClient from "@/components/MovieListClient";
+import FavoriteMoviesClient from "@/components/FavoriteMoviesClient";
 
 // import MovieList from "@/components/MovieList";
 // import useMovieList from "@/hooks/useMovieList";
@@ -45,6 +46,7 @@ export default async function Home() {
       <div className="pb-40">
         {/* <MovieList title="Trending Now" data={movies} /> */}
         <MovieListClient />
+        <FavoriteMoviesClient />
       </div>
     </>
   );
