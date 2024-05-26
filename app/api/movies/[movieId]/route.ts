@@ -9,7 +9,8 @@ export async function GET(req: NextRequest, { params }: { params: { movieId: str
         const { movieId } = params;
         
         if (!movieId || typeof movieId !== 'string') {
-            throw new Error('Invalid movie ID');
+            // throw new Error('Invalid movie ID');
+            return NextResponse.json({ error: 'Invalid movie ID' }, { status: 400 });
         }
 
         const movie = await prismadb.movie.findUnique({
@@ -19,7 +20,8 @@ export async function GET(req: NextRequest, { params }: { params: { movieId: str
         });
 
         if(!movie) {
-            throw new Error('Invalid movie ID');
+            // throw new Error('Invalid movie ID');
+            return NextResponse.json({ error: 'Invalid movie ID' }, { status: 400 });
         }
 
         return NextResponse.json(movie, { status: 200 });

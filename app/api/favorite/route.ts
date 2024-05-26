@@ -16,7 +16,8 @@ export async function POST(req: NextRequest) {
         })
 
         if (!existingMovie) {
-            return new Error('Invalid movie ID');
+            // return new Error('Invalid movie ID');
+            return NextResponse.json({ error: 'Invalid movie ID' }, { status: 400 });
         }
 
         const updatedUser = await prismadb.user.update({
@@ -48,7 +49,8 @@ export async function DELETE(req: NextRequest) {
         })
 
         if (!existingMovie) {
-            return new Error('Invalid movie ID');
+            // return new Error('Invalid movie ID');
+            return NextResponse.json({ error: 'Invalid movie ID' }, { status: 400 });
         }
 
         const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
