@@ -24,6 +24,10 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
+import MovieListClient from "@/components/MovieListClient";
+
+// import MovieList from "@/components/MovieList";
+// import useMovieList from "@/hooks/useMovieList";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -32,10 +36,16 @@ export default async function Home() {
     redirect("/auth");
   }
 
+  // const { data:movies = [] } = useMovieList();
+
   return (
     <>
       <Navbar />
       <Billboard />
+      <div className="pb-40">
+        {/* <MovieList title="Trending Now" data={movies} /> */}
+        <MovieListClient />
+      </div>
     </>
   );
 }
