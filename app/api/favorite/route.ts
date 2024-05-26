@@ -70,10 +70,4 @@ export async function DELETE(req: NextRequest) {
 }
 
 // Add the new config export according to Next.js conventions
-export const config = {
-    runtime: 'edge', // Use 'edge' runtime for better performance
-};
-
-// export const config = {
-//     matcher: '/api/favorite', // Apply middleware to this route
-// };
+export const runtime = 'edge';
